@@ -40,7 +40,7 @@ h1 {
 
 img {
     width: 100%!important;
-    object-fit: cover!important;
+    object-fit: contain!important;
     height: 100%;
 }
 

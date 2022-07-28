@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags cache  %}
+{% block body_class %}template-classicpage{% endblock %}
+
+{% block banner %}
+
+    {% image page.banner_background_image fill-1600x800  as bg_img %}
+    <div class="jumbotron jumbotron-fluid text-light py-5 d-flex align-items-center cc-home-banner" style='background: url({{ bg_img.url }}); background-size: cover; background-repeat: no-repeat;'>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                    <h1 class="display-3 cc-home-banner-title">{{ page.title }}</h1>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock banner %}
+
+{% block content %}
+    {% for block in page.body %}
+        {% include_block block %}
+    {% endfor %}
+{% endblock content %}

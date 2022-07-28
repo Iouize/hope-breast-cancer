@@ -1,0 +1,10 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="card" style="width: 18rem;">  
+    {% image block.value.image width-420 height-300 class="card-img-top" %}
+        
+    <div class="card-body">
+        <p class="card-text">
+            {{ block.value.paragraph }}
+        </p>
+    </div>
+</div>

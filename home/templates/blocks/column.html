@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% if blocks %}
+    {% for block in blocks %}
+        {% if block.block_type == 'image' %}
+            <section class="block-{{ block.block_type }} text-center">
+                {% image block.value width-420 class="img-fluid" %}
+            </section>
+        {% else %}
+           <section class="block-{{ block.block_type }}">
+               {{ block }}
+           </section>
+        {% endif %}
+    {% endfor %}
+{% endif %}

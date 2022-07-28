@@ -1,0 +1,33 @@
+{% load wagtailimages_tags %}
+
+
+<!-- Cards Block -->
+<div class="row justify-content-around my-5">
+	{% for card in value.cards %}
+		<div class="col-md-4 d-flex align-items-stretch{% if not forloop.first %} mt-4 mt-md-0{% endif %}">
+			<div class="card border-primary mb-3 text-center">
+				<a href="{% if card.link.internal_page %}{{ card.link.internal_page.url }}{% elif card.link.external_link %}{{ card.link.external_link }}{% else %}#{% endif %}">
+					<picture>
+						{% image card.image fill-570x370 as img %}	
+						<img src="{{ img.url }}" class="card-img-top" alt="{{ img.alt }}">	
+					</picture>
+				</a>
+				<div class="card-body py-3 px-3">
+					<a class="lien-card" href="{% if card.link.internal_page %}{{ card.link.internal_page.url }}{% elif card.link.external_link %}{{ card.link.external_link }}{% else %}#{% endif %}">
+						<h5 class="card-title">{{ card.title }}</h5>
+						{% if card.text %}
+						<p class="card-text">{{ card.text }}</p>
+						{% endif %}
+					</a>
+					<p class="card-text">
+						<a class="btn btn-link d-inline" href="{% if card.link.internal_page %}{{ card.link.internal_page.url }}{% elif card.link.external_link %}{{ card.link.external_link }}{% else %}#{% endif %}">
+							{{ card.link.link_text }}
+						</a>
+					</p>
+				</div>		
+			</div>
+		</div>
+	{% endfor %}
+		
+	
+</div>

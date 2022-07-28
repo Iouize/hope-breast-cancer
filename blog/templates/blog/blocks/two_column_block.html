@@ -1,0 +1,39 @@
+{% load wagtailcore_tags %}
+<div class="row my-3">
+
+    {% if self.position == 'left' %}
+        <div class="col-md-7">
+            {% for block in self.left_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="col-md-5">
+            {% for block in self.right_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+    {% elif self.position == 'middle' %}
+        <div class="col-md-6">
+            {% for block in self.left_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            {% for block in self.right_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="col-md-5">
+            {% for block in self.left_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+        <div class="col-md-7">
+            {% for block in self.right_column %}
+                {% include_block block %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</div>

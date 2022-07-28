@@ -1,0 +1,60 @@
+* {
+    font-family: 'Albert Sans', sans-serif;
+    text-decoration: none;
+}
+
+h1 {
+    color: white;
+    /*color: #FF6CA8;*/
+    text-shadow: 1px 1px 2px #FF6CA8;
+}
+
+.ma-nav {
+    background-color: #FF6CA8;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
+
+.cc-home-banner {
+    height: 600px;
+}
+
+.cc-margins-blocks {
+    margin: 3em 0 3em 0 !important;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    border-radius: 10px;
+}
+
+.lien-card {
+    text-decoration: none !important;
+}
+
+img {
+    width: 100%!important;
+    object-fit: cover!important;
+    height: 100%;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+
+}
+
+.logo-footer {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+p {
+    width: 100% !important;
+}

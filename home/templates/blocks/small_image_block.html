@@ -1,0 +1,11 @@
+{% load wagtailimages_tags %}
+
+{% image self fill-600x300 as img %}
+
+<div class="row my-5">
+	<div class="col-sm-12">
+		<picture>
+		<img src="{{ img.url }}" alt="{{ img.alt }}" style='width: 100%; height: auto;'>
+		</picture>
+	</div>
+</div>

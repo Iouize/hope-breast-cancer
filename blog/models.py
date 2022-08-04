@@ -25,6 +25,9 @@ from wagtail.snippets.models import register_snippet
 
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
+    content_panels = Page.content_panels + [         
+        ImageChooserPanel("banner_background_image"),
+    ]
 
     lead_text = models.CharField(
         max_length=140,

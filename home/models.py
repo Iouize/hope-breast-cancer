@@ -73,7 +73,7 @@ class HomePage(Page):
 class ClassicPage(Page):
     banner_background_image = models.ForeignKey(
         'wagtailimages.Image',
-        blank=False,
+        blank=True,
         null=True,
         related_name='+',
         help_text='Image de la banière',
